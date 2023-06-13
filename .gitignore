@@ -35,13 +35,16 @@ yarn-error.log*
 next-env.d.ts
 
 # next-pwa
-/public/precache.*.*.js
-/public/sw.js
-/public/workbox-*.js
-/public/worker-*.js
-/public/fallback-*.js
-/public/precache.*.*.js.map
-/public/sw.js.map
-/public/workbox-*.js.map
-/public/worker-*.js.map
-/public/fallback-*.js
+/src/public/precache.*.*.js
+/src/public/sw.js
+/src/public/workbox-*.js
+/src/public/worker-*.js
+/src/public/fallback-*.js
+/src/public/precache.*.*.js.map
+/src/public/sw.js.map
+/src/public/workbox-*.js.map
+/src/public/worker-*.js.map
+/src/public/fallback-*.js
+
+.idea
+public

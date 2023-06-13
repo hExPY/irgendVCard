@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css'
+import InputTestComponent from "../components/InputTestComponent/InputTestComponent";
 
 export default function Home() {
   return (
@@ -43,6 +44,10 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
+          <InputTestComponent localStorageKey={"test"} initialValue={"tester"} />
+          <InputTestComponent localStorageKey={"test2"} initialValue={"test2"} />
+          <InputTestComponent localStorageKey={"test3"} initialValue={"test3"} />
+          <InputTestComponent localStorageKey={"test4"} initialValue={"test4"} />
         </div>
       </main>
 
