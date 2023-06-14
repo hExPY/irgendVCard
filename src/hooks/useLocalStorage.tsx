@@ -1,12 +1,12 @@
 import { useState } from "react"
 
+const isBrowser = typeof window !== "undefined"
+
 const useLocalStorage = (key: string, initialValue: string) => {
     const [state, setState] = useState(() => {
-        try {
-            const localStorageValue = window.localStorage.getItem(key) 
+        if (isBrowser) {
+            const localStorageValue = window.localStorage.getItem(key)
             return localStorageValue ? JSON.parse(localStorageValue) : initialValue
-        } catch (error) {
-            console.log(error)
         }
     })
 
