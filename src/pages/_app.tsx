@@ -1,9 +1,20 @@
 import Head from 'next/head'
 import '../styles/globals.css'
 import { AppProps } from 'next/app'
+import NoSSR from 'react-no-ssr';
+import React from "react";
+
+
+function SafeHydrate({ children }: any) {
+  return (
+      <div suppressHydrationWarning>
+        {typeof window === 'undefined' ? null : children}
+      </div>
+  )
+}
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return (
+    return (
     <>
       <Head>
         <meta charSet="utf-8" />
@@ -32,7 +43,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <Component {...pageProps} />
+      <NoSSR>
+          <Component {...pageProps}/>
+      </NoSSR>
     </>
   )
 }

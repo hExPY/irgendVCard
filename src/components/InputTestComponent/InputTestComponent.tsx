@@ -1,4 +1,4 @@
-import useLocalStorage from "../../hooks/useLocalStorage";
+import {useApplicationStore} from "../../lib/store"
 
 type Props = {
     localStorageKey: string;
@@ -6,13 +6,19 @@ type Props = {
 }
 
 const InputTestComponent = ({localStorageKey, initialValue}: Props) => {
-    const [input, setInput] = useLocalStorage(localStorageKey, initialValue)
+    const content = useApplicationStore(state => state.content)
+    const setContent = useApplicationStore(state => state.setContent)
+
     const handleChange = (event: { target: { value: string; }; }) => {
         const value = event.target.value;
-        setInput(value);
-        console.log(input)
+        setContent(value);
     };
-    return <input value={input} onChange={handleChange}/>
+    return (
+        <div>
+            <input value={content} onChange={handleChange}/>
+            <p>{content}</p>
+        </div>
+    )
 };
 
 export default InputTestComponent;
