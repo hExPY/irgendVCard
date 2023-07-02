@@ -7,16 +7,14 @@ interface IApplicationStore {
 }
 
 const useApplicationStore = create<IApplicationStore>()(
-    devtools(
-        persist(
-            (set) => ({
-                content: "",
-                setContent: (newContent: string ) => set({ content: newContent })
-            }),
-            {
-                name: 'application-store',
-            }
-        )
+    persist(
+        (set) => ({
+            content: "",
+            setContent: (newContent: string ) => set({ content: newContent })
+        }),
+        {
+            name: 'application-store',
+        }
     )
 )
 

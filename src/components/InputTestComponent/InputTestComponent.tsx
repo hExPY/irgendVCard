@@ -1,4 +1,5 @@
 import {useApplicationStore} from "../../lib/store"
+import { Input } from '@nextui-org/react';
 
 type Props = {
     localStorageKey: string;
@@ -15,8 +16,7 @@ const InputTestComponent = ({localStorageKey, initialValue}: Props) => {
     };
     return (
         <div>
-            <input value={content} onChange={handleChange}/>
-            <p>{content}</p>
+            <Input value={content} onChange={handleChange}/>
         </div>
     )
 };
